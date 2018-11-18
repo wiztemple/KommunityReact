@@ -1,0 +1,35 @@
+/*modal*/
+.modal{
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top:0;
+    height:100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.3);
+}
+  .modal-content{
+   border-radius: 10px;
+   background-color: #fff;
+   margin: 30% auto;
+   padding: 10px;
+   animation-name: modalopen;
+   animation-duration: 2s;
+}
+  .closeBtn{
+    color:#ccc;
+    float:right;
+    font-size: 30px;
+}
+
+  .closeBtn:hover, .closeBtn:focus{
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+  @keyframes modalopen{
+    from{opacity: 0;}
+    to {opacity: 1;}
+}

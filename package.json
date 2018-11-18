@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --init --fix"
+    "lint": "eslint --init --fix",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
     "style-loader": "^0.23.1"
   },
   "devDependencies": {
