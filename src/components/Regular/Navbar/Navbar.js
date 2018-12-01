@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import CreateQuestion from '../../CreateQuestion/CreateQuestion';
 import './Navbar.css';
 
@@ -49,22 +50,35 @@ class Navbar extends Component {
                             </button>
                         </div>
                     </nav>
-                    <nav className="nav__items nav__items-right js__AuthButton">
-                        <div className="navbar__nav pr-0 p__8">
-                            <Link to="/signup">
-                                <button type="button" className="btn btn-colorless" id="signBtn">Sign Up <i className="fa fa-dashcube" /></button>
-                            </Link>
-                        </div>
-                        <div className="navbar__nav pr-0 p__8">
-                            <Link to="/signin">
-                                <button type="button" className="btn btn-colorless" id="loginBtn">Login <i className="fa fa-chevron-circle-right" /></button>
-                            </Link>
-                        </div>
-                    </nav>
+
+                    {
+                        !this.props.user &&
+                        <nav className="nav__items nav__items-right js__AuthButton">
+                            <div className="navbar__nav pr-0 p__8">
+                                <Link to="/signup">
+                                    <button type="button" className="btn btn-colorless" id="signBtn">Sign Up <i className="fa fa-dashcube" /></button>
+                                </Link>
+                            </div>
+                            <div className="navbar__nav pr-0 p__8">
+                                <Link to="/signin">
+                                    <button type="button" className="btn btn-colorless" id="loginBtn">Login <i className="fa fa-chevron-circle-right" /></button>
+                                </Link>
+                            </div>
+                        </nav>
+                    }
+                    
                 </div>
             </div>
         );
     }
 }
 
-export default Navbar;
+const mapStateToProps = state => ({
+    signing_up: state.auth.signing_up,
+    user: state.auth.user,
+    error: state.auth.error,
+});
+
+export default connect(mapStateToProps)(Navbar);
+
+

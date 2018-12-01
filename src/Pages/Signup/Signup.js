@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signUp } from '../../store/actions/authAction';
 
 class Signup extends Component {
   state = {
     username: '',
     email: '',
     password: '',
-    errors: {}
   }
 
   handleChange = (e) => {
@@ -17,12 +18,8 @@ class Signup extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const newUser = {
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password
-    }
-    console.log(newUser);
+    const { signUp } = this.props;
+    signUp(this.state);
   }
   render() {
     return (
@@ -69,4 +66,15 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+const mapStateToProps = state => ({
+  signing_up: state.auth.signing_up,
+  user: state.auth.user,
+  error: state.auth.error,
+});
+
+const actions = {
+  signUp
+}
+
+export default connect(mapStateToProps, actions)(Signup);
+

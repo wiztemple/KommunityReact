@@ -5,7 +5,7 @@ const LeftCard = () => (
     <div className="left-side">
         <h1>Activity</h1>
         <div className="left-side__item active2">
-            <Link className="side-link" to="/"><span className="pr-1"><i className="fa fa-pencil"></i></span> Questions</Link>
+            <Link className="side-link" to="/"><span className="pr-1"><i className="fa fa-question"></i></span> Questions</Link>
         </div>
         <div className="left-side__item">
             <Link className="side-link" to="/"><span className="pr-1"><i className="fa fa-book"></i></span> Answers</Link>
