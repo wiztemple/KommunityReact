@@ -1,0 +1,23 @@
+$light-red: rgb(255, 93, 93);
+$light-green: rgb(181, 228, 181);
+
+.alert {
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+  transition: all 0.25s ease-in-out;
+  min-width: 300px;
+  opacity: 1;
+  position: fixed;
+  top: 50px;
+  right: 100px;
+  z-index: 1000;
+}
+
+.alert-danger {
+  background-color: $light-red
+}
+
+.alert-success {
+  background-color: $light-green;
+}
