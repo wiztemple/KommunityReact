@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../components/containers/Navbar/Navbar.jsx';
+import Navbar from '../components/containers/Navbar/Navbar';
 
 class Profile extends Component {
   render() {

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import CreateQuestion from '../CreateQuestion/CreateQuestion.jsx';
+import UserNav from './UserNav.jsx';
+import GuestNav from './GuestNav.jsx';
 import './Navbar.scss';
 
 class Navbar extends Component {
@@ -13,8 +16,9 @@ class Navbar extends Component {
     closeQuestionModal = () => this.setState({ showQuestionModal: false });
 
     render() {
+      const { isLoggedIn } = this.props;
       return (
-        <div className="navbar fixed-top" id="navbar">
+        <div className="navbar fixed-top" id="navbar" >
           {this.state.showQuestionModal
             && <CreateQuestion handleClose={this.closeQuestionModal} />}
           <div className="shelter">
@@ -31,7 +35,7 @@ class Navbar extends Component {
               <div className="navbar__nav nav__underline">
                 <Link to="/" className="nav__link active">
                   <i className="icon ion-md-home p-r-5" />
-                                Home
+                      Home
                 </Link>
               </div>
               <div className="navbar__nav nav__underline p__8">
@@ -47,35 +51,16 @@ class Navbar extends Component {
                 </button>
               </div>
             </nav>
-
-            {
-              !this.props.user
-                && <nav className="nav__items nav__items-right js__AuthButton">
-                  <div className="navbar__nav pr-0 p__8">
-                    <Link to="/signup">
-                      <button type="button"
-                        className="btn btn-colorless"
-                        id="signBtn">Sign Up
-                        <i className="icon ion-md-arrow-round-forward" />
-                      </button>
-                    </Link>
-                  </div>
-                  <div className="navbar__nav pr-0 p__8">
-                    <Link to="/login">
-                      <button type="button"
-                        className="btn btn-colorless"
-                        id="loginBtn">Login
-                        <i className="fa fa-chevron-circle-right" /></button>
-                    </Link>
-                  </div>
-                </nav>
-            }
-
+            <nav className="nav__items nav__items-right">
+              {isLoggedIn ? <UserNav /> : <GuestNav /> }
+            </nav>
           </div>
         </div>
       );
     }
 }
 
-
+Navbar.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
 export default Navbar;

@@ -19,7 +19,6 @@ class Card extends Component {
     if (fetching) {
       return null;
     }
-    console.log(questions, fetching);
     return (
       <div className="epic-shelter">
         {fetching ? (<HomeSkeleton />) : (
@@ -29,7 +28,7 @@ class Card extends Component {
                 <a className="card-question__title" href="answer.html">
                   {question.title}</a>
                 <div className="card-hide">
-                  <i className="fa fa-ellipsis-h" />
+                  <i className="icon ion-ios-keypad" />
                   <div className="card-drop">
                     <a className="editBtn">
                       <i className="fa fa-pencil" /> Edit Question

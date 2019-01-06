@@ -480,7 +480,7 @@ label {
     padding: 6px;
     height: 40px;
     width: 40px;
-    background-color: #ccc;
+    background-color:transparent;
     border-radius: 50%;
 }
 
@@ -592,14 +592,15 @@ color: #777;
     color:#0541fb;
 }
 .carded {
-    position: relative;
+    padding: 10px 0px;
     color: #0541fb;
     font-size: 18px;
-    width:100%;
-    background-color: #fff;
-    border-radius: 5px;
+    
 }
-
+.carded > span {
+    padding-left: 12px;
+    font-size: 22px !important;
+}
 .form-card {
     padding: 1rem;
     background-color: #ffff;

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { signupRequestAction } from '../actions/signupActions';
 import AlertBox from '../components/alerts/AlertBox.jsx';
+import { getItem } from '../utils/localStorage';
 
 class Signup extends Component {
     state = {
@@ -33,6 +34,11 @@ class Signup extends Component {
 
     render() {
       const { signingUp, error, success } = this.props;
+
+      if (getItem('token')) {
+        return <Redirect to="/" />;
+      }
+
       return (
         <div className="app">
           {
@@ -41,7 +47,7 @@ class Signup extends Component {
           }
           {
             success
-            && <AlertBox className="success" message={success.split('.')[1]} />
+            && <AlertBox className="success" message={success} />
           }
           <div className="shelter">
             <div className="columns">
@@ -52,7 +58,7 @@ class Signup extends Component {
                     <Link className="text-blue" to="/">Kommunity</Link>
                   </h1>
                   <h2 className="text-center text-grey">
-                        Sign up to Kommunity
+                      Sign up to Kommunity
                   </h2>
                   <div className="form-card">
                     <form onSubmit={this.handleSubmit}>

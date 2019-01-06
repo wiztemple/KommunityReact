@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { takeLatest, call, put } from 'redux-saga/effects';
-import history from '../history';
 import { SIGNUP_REQUEST } from '../actionTypes/signupActionTypes';
 import {
   signupActionSuccess,
   signupActionFailure
 } from '../actions/signupActions';
+import { getUserCredentials } from '../utils/localStorage';
 
 /**
  * Handles the call to sihnup endpoint
@@ -13,7 +13,7 @@ import {
  * @returns {promise}
  */
 const signupUser = (payload) => {
-  return axios.get(`${process.env.API_URL}/auth/signup`, payload);
+  return axios.post(`${process.env.API_URL}/auth/signup`, payload);
 };
 
 /**
@@ -23,8 +23,8 @@ const signupUser = (payload) => {
 export function* signupSaga(action) {
   try {
     const response = yield call(signupUser, action.payload);
+    getUserCredentials(response.data.data);
     yield put(signupActionSuccess(response.data));
-    yield history.push('/');
   } catch (error) {
     yield put(signupActionFailure(error.message));
   }

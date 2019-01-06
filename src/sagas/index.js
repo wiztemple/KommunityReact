@@ -2,6 +2,7 @@ import { all } from 'redux-saga/effects';
 
 import watchQuestions from './questionsSaga';
 import watchSignup from './signupSaga';
+import watchSingleQuestionSaga from './singleQuestionSaga';
 
 /**
  * The root saga
@@ -9,7 +10,8 @@ import watchSignup from './signupSaga';
 function* rootSaga() {
   yield all([
     watchQuestions(),
-    watchSignup
+    watchSignup(),
+    watchSingleQuestionSaga()
   ]);
 }
 
