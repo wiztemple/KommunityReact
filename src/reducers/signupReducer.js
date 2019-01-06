@@ -11,7 +11,6 @@ const initialState = {
   payload: {}
 };
 
-
 const signupReducer = (state = initialState, action) => {
   switch (action.type) {
   case SIGNUP_REQUEST:
