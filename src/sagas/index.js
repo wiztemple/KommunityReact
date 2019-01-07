@@ -2,6 +2,7 @@ import { all } from 'redux-saga/effects';
 import watchQuestions from './questionsSaga';
 import watchSignup from './signupSaga';
 import watchLogin from './loginSaga';
+import watchCreateQuestion from './createQuestionSaga';
 import watchSingleQuestionSaga from './singleQuestionSaga';
 
 /**
@@ -12,6 +13,7 @@ function* rootSaga() {
     watchQuestions(),
     watchSignup(),
     watchLogin(),
+    watchCreateQuestion(),
     watchSingleQuestionSaga()
   ]);
 }
