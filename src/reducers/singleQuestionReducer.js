@@ -7,6 +7,7 @@ import {
 const initialState = {
   fetching: false,
   question: null,
+  answers: null,
   error: null
 };
 
@@ -22,7 +23,8 @@ const singleQuestionReducer = (state = initialState, action) => {
     return {
       ...state,
       fetching: false,
-      question: action.payload
+      question: action.payload.question[0],
+      answers: action.payload.answers
     };
   case SINGLE_QUESTION_FAILURE:
     return {

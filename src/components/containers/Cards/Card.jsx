@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { questionsAction } from '../../../actions/questionsAction';
@@ -26,7 +27,10 @@ class Card extends Component {
             <div className="card p-1" key={question.id}>
               <div className="card-question">
                 <a className="card-question__title" href="answer.html">
-                  {question.title}</a>
+                  <Link to={`/questions/${question.id}`}>
+                    {question.title}
+                  </Link>
+                </a>
                 <div className="card-hide">
                   <i className="icon ion-ios-keypad" />
                   <div className="card-drop">

@@ -4,8 +4,9 @@ import {
   SINGLE_QUESTION_FAILURE
 } from '../actionTypes/singleQuestionActionType';
 
-export const singleQuestionAction = () => ({
+export const singleQuestionAction = id => ({
   type: SINGLE_QUESTION_REQUEST,
+  payload: id,
 });
 
 export const singleQuestionActionSuccess = question => ({

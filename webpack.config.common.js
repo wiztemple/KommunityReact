@@ -26,10 +26,6 @@ module.exports = {
           presets: ['env', 'react'],
           plugins: ['transform-class-properties']
         }
-      },
-      {
-        test: /\.(js|jsx)$/,
-        use: ['eslint-loader']
       }
     ],
   },
