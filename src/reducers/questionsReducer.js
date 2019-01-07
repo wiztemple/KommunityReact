@@ -1,7 +1,8 @@
 import {
   QUESTIONS_REQUEST,
   QUESTIONS_SUCCESS,
-  QUESTIONS_FAILURE
+  QUESTIONS_FAILURE,
+  UPDATE_NEW_QUESTION
 } from '../actionTypes/questionsActionType';
 
 const initialState = {
@@ -19,6 +20,11 @@ export default (state = initialState, action) => {
   case QUESTIONS_FAILURE:
     return {
       ...state, fetching: false, questions: null, error: action.error
+    };
+  case UPDATE_NEW_QUESTION:
+    return {
+      ...state,
+      questions: [action.payload, ...state.questions]
     };
   default:
     return state;

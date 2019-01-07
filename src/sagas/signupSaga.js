@@ -8,7 +8,7 @@ import {
 import { getUserCredentials } from '../utils/localStorage';
 
 /**
- * Handles the call to sihnup endpoint
+ * Handles the call to signup endpoint
  * @param {*} payload User data
  * @returns {promise}
  */
@@ -17,7 +17,7 @@ const signupUser = (payload) => {
 };
 
 /**
- * The generator function for sign upsaga
+ * The generator function for sign up saga
  * @param {object} action
  */
 export function* signupSaga(action) {
