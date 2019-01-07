@@ -17,8 +17,8 @@ const fetchSingleQuestion = (id) => {
  */
 export function* singleQuestionSaga(action) {
   try {
-    const { data: { questions } } = yield call(fetchSingleQuestion(action.payload));
-    yield put(singleQuestionActionSuccess(questions));
+    const { data } = yield call(fetchSingleQuestion, action.payload);
+    yield put(singleQuestionActionSuccess(data.data));
   } catch (error) {
     yield put(singleQuestionActionFailure(error.message));
   }
