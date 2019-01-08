@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserImg from '../../../../public/images/user.png';
+import { clearStorage } from '../../../utils/localStorage';
 
 /**
  * Functional react component
@@ -12,7 +13,7 @@ const UserNav = () => {
       <Link to="/"><img src={UserImg}
         className="avatar-sm" title="Profile" /></Link>
       <div className="dropdown-content">
-        <Link to="/">Log out <i className="icon ion-ios-power" /></Link>
+        <Link to="/" onClick={() => clearStorage()}>Log out <i className="icon ion-ios-power" /></Link>
         <Link to="/">Profile <i className="icon ion-ios-person" /></Link>
       </div>
     </div>

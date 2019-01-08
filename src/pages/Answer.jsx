@@ -5,9 +5,11 @@ import AnswerCard from '../components/containers/Cards/AnswerCard.jsx';
 import QuestionCard from '../components/containers/Cards/QuestionCard.jsx';
 import { isLoggedIn } from '../utils/localStorage';
 import { singleQuestionAction } from '../actions/singleQuestionAction';
+import { postAnswerRequestAction } from '../actions/postAnswerAction';
 
 
 class AnswerPage extends PureComponent {
+
   componentDidMount() {
     const {
       match: {
@@ -16,17 +18,20 @@ class AnswerPage extends PureComponent {
         }
       }
     } = this.props;
-    console.log(this.props, id);
     this.props.singleQuestionAction(id);
   }
 
-  componentDidUpdate() {
-    const { question } = this.props;
-    console.log('this is the question: ', question);
-  }
-
   render() {
-    const { question, answers } = this.props;
+    const {
+      question,
+      answers,
+      postAnswerRequestAction,
+      match: {
+        params: {
+          id
+        }
+      }
+    } = this.props;
     if (!question) {
       return <div>Loading</div>;
     }
@@ -38,9 +43,15 @@ class AnswerPage extends PureComponent {
         <section>
           <div className="shelter">
             <div className="columns">
-              <div className="col-2" />
               <div className="col-7">
-                <QuestionCard question={question} />
+                <QuestionCard
+                  question={question}
+                  postAnswerRequestAction={postAnswerRequestAction}
+                  id={id}
+                />
+                <div className="answer-count">
+                  <h1>Answers</h1>
+                </div>
                 <AnswerCard answers={answers}/>
               </div>
             </div>
@@ -56,4 +67,4 @@ const mapStateToProps = state => ({
   answers: state.singleQuestion.answers
 });
 
-export default connect(mapStateToProps, { singleQuestionAction })(AnswerPage);
+export default connect(mapStateToProps, { singleQuestionAction, postAnswerRequestAction })(AnswerPage);

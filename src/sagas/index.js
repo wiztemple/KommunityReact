@@ -3,6 +3,7 @@ import watchQuestions from './questionsSaga';
 import watchSignup from './signupSaga';
 import watchLogin from './loginSaga';
 import watchCreateQuestion from './createQuestionSaga';
+import watchPostAnswer from './postAnswerSaga';
 import watchSingleQuestionSaga from './singleQuestionSaga';
 
 /**
@@ -14,7 +15,8 @@ function* rootSaga() {
     watchSignup(),
     watchLogin(),
     watchCreateQuestion(),
-    watchSingleQuestionSaga()
+    watchSingleQuestionSaga(),
+    watchPostAnswer(),
   ]);
 }
 

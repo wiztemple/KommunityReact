@@ -15,7 +15,6 @@ import { getItem } from '../utils/localStorage';
  * @returns {promise}
  */
 const createQuestion = (payload) => {
-  console.log(getItem('token'));
   return axios.post(`${process.env.API_URL}/question`, payload, {
     headers: {
       authorization: `Bearer ${getItem('token')}`
@@ -30,7 +29,6 @@ const createQuestion = (payload) => {
 export function* createQuestionSaga(action) {
   try {
     const response = yield call(createQuestion, action.payload);
-    console.log(response);
     const {
       userId,
       title,

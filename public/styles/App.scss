@@ -391,6 +391,11 @@ textarea {
     border-right: 2px solid blue;
 
 }
+.answer-block {
+    background-color: #f8f8f8;
+    padding: 10px;
+
+}
 .comment-box {
     margin-left: 5rem;
     background-color: #fff;
@@ -497,6 +502,9 @@ label {
 }
 .card-question__title {
     padding-bottom: 10px;
+}
+.card-user > img {
+    padding-left: 10px;
 }
 .card-hide {
     margin-left: 2px;
@@ -796,6 +804,9 @@ border-radius: 50%;
 }
 .mt-4 {
     margin-top: 4rem;
+}
+.mt-5 {
+    margin-top: 5rem;
 }
 /*margin-bottom*/
 .mb-1 {

@@ -4,11 +4,13 @@ import signupReducer from './signupReducer';
 import loginReducer from './loginReducer';
 import createQuestionReducer from './createQuestionReducer';
 import singleQuestionReducer from './singleQuestionReducer';
+import postAnswerReducer from './postAnswerReducer';
 
 export default combineReducers({
   questions: questionsReducer,
   signup: signupReducer,
   login: loginReducer,
   create: createQuestionReducer,
-  singleQuestion: singleQuestionReducer
+  singleQuestion: singleQuestionReducer,
+  postAnswer: postAnswerReducer,
 });
