@@ -29,17 +29,6 @@ class Card extends Component {
                 <Link className="card-question__title" to={`/questions/${question.id}`}>
                   {question.title}
                 </Link>
-                <div className="card-hide">
-                  <i className="icon ion-ios-keypad" />
-                  <div className="card-drop">
-                    <a className="editBtn">
-                      <i className="fa fa-pencil" /> Edit Question
-                    </a>
-                    <a className="deleteBtn"><
-                      i className="fa fa-times" /> Delete Question
-                    </a>
-                  </div>
-                </div>
               </div>
               <div className="justify-content-start">
                 <div className="card-user">
@@ -58,15 +47,14 @@ class Card extends Component {
                   {question.question_body}
                 </p>
               </div>
-              <div className="card-reaction justify-content-space-between">
+              {/* <div className="card-reaction justify-content-space-between">
                 <div className="card-answer ml-2">
                   <div className="card-btn">
                     <span>63 Answers</span> <i className="fa fa-pencil" />
                   </div>
                 </div>
-
-              </div>
-            </div >
+              </div> */}
+            </div>
           ))
         )}
       </div>
