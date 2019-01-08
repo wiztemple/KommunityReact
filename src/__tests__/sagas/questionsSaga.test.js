@@ -15,10 +15,8 @@ describe('Recent article Saga:', () => {
   mockAxios.get.mockImplementationOnce(() => Promise.resolve({
     data: {
       status: 200,
-      data: {
-        message: 'success',
-        rows: {}
-      }
+      message: 'success',
+      questions: {}
     }
   }));
 

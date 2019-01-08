@@ -11,7 +11,7 @@ export const loginRequestAction = payload => ({
 
 export const loginActionSuccess = response => ({
   type: LOGIN_SUCCESS,
-  success: response.message
+  payload: response.message
 });
 
 export const loginActionFailure = response => ({

@@ -1,15 +1,17 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
-import { BrowserRouter as Router } from 'react-router-dom';
-import HomePage from '../../../pages/HomePage';
-import store from '../../../store';
+import Card from '../../../components/containers/Cards/Card';
+import store from '../../store';
+import { questions } from '../../mockData';
 
 afterEach(cleanup);
 
-describe('HomePage Section  component', () => {
+const questionStore = store(questions);
+
+describe('Card Section  component', () => {
   it('should render without crashing', () => {
-    render(<Router>
-      <HomePage store={store} />
-    </Router>);
+    render(
+      <Card store={questionStore} />
+    );
   });
 });

@@ -11,7 +11,7 @@ describe('Login reducer', () => {
     expect(loginReducer(undefined, { type: 'UNDEFINED_TYPE' })).toEqual({
       loggingIn: false,
       error: '',
-      token: '',
+      success: '',
       payload: {}
     });
   });
@@ -23,7 +23,7 @@ describe('Login reducer', () => {
     })).toEqual({
       loggingIn: true,
       error: '',
-      token: '',
+      success: '',
       payload: {}
     });
   });
@@ -31,11 +31,11 @@ describe('Login reducer', () => {
   it('should update the state on login success', () => {
     expect(loginReducer(undefined, {
       type: LOGIN_SUCCESS,
-      payload: 'token',
+      success: 'success',
     })).toEqual({
       loggingIn: false,
       error: '',
-      token: 'token',
+      success: 'success',
       payload: {}
     });
   });
@@ -43,11 +43,11 @@ describe('Login reducer', () => {
   it('should update the state on login failure', () => {
     expect(loginReducer(undefined, {
       type: LOGIN_FAILURE,
-      payload: 'error',
+      error: 'error',
     })).toEqual({
       loggingIn: false,
       error: 'error',
-      token: '',
+      success: '',
       payload: {}
     });
   });
