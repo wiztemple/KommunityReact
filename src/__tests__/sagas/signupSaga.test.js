@@ -26,7 +26,7 @@ describe('Register user Saga:', () => {
 
     const expectedActions = [
       { type: SIGNUP_REQUEST },
-      { type: SIGNUP_SUCCESS, payload: 'success' }
+      { type: SIGNUP_SUCCESS, success: 'success' }
     ];
 
     store.dispatch({ type: SIGNUP_REQUEST });

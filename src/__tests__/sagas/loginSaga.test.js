@@ -27,7 +27,7 @@ describe('Login saga', () => {
 
     const expectedActions = [
       { type: LOGIN_REQUEST, payload: {} },
-      { type: LOGIN_SUCCESS, payload: 'sabdjhsjdjfd.kfbksjdfahjksd' },
+      { type: LOGIN_SUCCESS, payload: 'Hello Xtreme, Welcome to the Haven' },
     ];
 
     store.dispatch({ type: LOGIN_REQUEST, payload: {} });

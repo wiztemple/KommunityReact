@@ -39,17 +39,17 @@ describe('Register user reducer: ', () => {
       payload: 'Signup successful'
     })).toEqual({
       ...initialState,
-      success: 'undefined',
+      success: 'Signup successful'
     });
   });
 
   it('should add error to register state', () => {
     expect(registerReducer(undefined, {
       type: types.SIGNUP_FAILURE,
-      payload: 'Bad request'
+      error: 'Bad request'
     })).toEqual({
       ...initialState,
-      error: 'undefined',
+      error: 'Bad request',
     });
   });
 });

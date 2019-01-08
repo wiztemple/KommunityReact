@@ -28,7 +28,7 @@ describe('Register Action Success', () => {
   it('should return the correct action', () => {
     expect(signupActionSuccess({ message: 'success' })).toEqual({
       type: SIGNUP_SUCCESS,
-      payload: 'success'
+      success: 'success'
     });
   });
 });
@@ -36,7 +36,7 @@ describe('Register Action Failure', () => {
   it('should return the correct action', () => {
     expect(signupActionFailure({ message: 'Bad request' })).toEqual({
       type: SIGNUP_FAILURE,
-      payload: 'Bad request'
+      error: 'Bad request'
     });
   });
 });

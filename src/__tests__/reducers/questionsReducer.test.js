@@ -8,7 +8,7 @@ describe('All questions', () => {
     })).toEqual({
       fetching: false,
       error: null,
-      questions: []
+      questions: null
     });
   });
 
@@ -17,7 +17,7 @@ describe('All questions', () => {
       type: types.QUESTIONS_REQUEST
     })).toEqual({
       fetching: true,
-      questions: [],
+      questions: null,
       error: null
     });
   });
@@ -25,7 +25,7 @@ describe('All questions', () => {
   it('should update questions state', () => {
     expect(questionsReducer(undefined, {
       type: types.QUESTIONS_SUCCESS,
-      articles: []
+      questions: []
     })).toEqual({
       fetching: false,
       questions: [],

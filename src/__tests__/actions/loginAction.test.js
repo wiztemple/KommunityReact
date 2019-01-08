@@ -21,9 +21,9 @@ describe('Login request action handler', () => {
 
 describe('Login request success action handler', () => {
   it('should return an object with token payload', () => {
-    expect(loginActionSuccess({ token: 'token' })).toEqual({
+    expect(loginActionSuccess({ message: 'message' })).toEqual({
       type: LOGIN_SUCCESS,
-      payload: 'token'
+      payload: 'message'
     });
   });
 });
@@ -32,7 +32,7 @@ describe('Login request failure action handler', () => {
   it('should return an object with error', () => {
     expect(loginActionFailure({ message: 'error' })).toEqual({
       type: LOGIN_FAILURE,
-      payload: 'error'
+      error: 'error'
     });
   });
 });
