@@ -28,18 +28,15 @@ const createQuestion = (payload) => {
  */
 export function* createQuestionSaga(action) {
   try {
-    const response = yield call(createQuestion, action.payload);
+    const { data } = yield call(createQuestion, action.payload);
     const {
       userId,
-      title,
       questionBody,
-      tag,
-    } = response.data.questionObj;
-    yield put(createQuestionActionSuccess(response.data));
+      ...rest
+    } = data.questionObj;
+    yield put(createQuestionActionSuccess(data));
     yield put(updateNewQuestion({
-      id: userId,
-      tag,
-      title,
+      ...rest,
       question_body: questionBody,
       created_at: new Date(Date.now()),
       updated_at: new Date(Date.now()),

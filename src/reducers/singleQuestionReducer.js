@@ -6,7 +6,6 @@ import {
 
 import {
   POST_ANSWER_SUCCESS,
-  POST_ANSWER_FAILURE
 } from '../actionTypes/postAnswerActionType.js';
 
 const initialState = {

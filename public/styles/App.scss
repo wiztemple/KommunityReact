@@ -233,7 +233,7 @@ blockquote {
 }
 .justify-content-space-between {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .justify-content-space-around {
     display: flex;
@@ -436,6 +436,10 @@ textarea {
 .textarea:focus {
     outline: none;
 }
+.ion-ios-person {
+    font-size: 46px;
+    color: #777;
+}
 label {
   color: #000;
   font-weight: 600;
@@ -502,6 +506,7 @@ label {
 }
 .card-question__title {
     padding-bottom: 10px;
+    font-size: 20px;
 }
 .card-user > img {
     padding-left: 10px;
@@ -646,9 +651,12 @@ color: #777;
     color:#616770;
     line-height: 20px;
     font-weight: 100; 
+    padding: 5px;
     
 }
-
+.card-user-span > .icon {
+    padding-left: 10px;
+}
 .card__shadow{
   padding: 10px;
   background-color: #fff;
