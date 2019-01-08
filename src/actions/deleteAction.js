@@ -2,7 +2,7 @@ import {
   DELETE_QUESTION_REQUEST,
   DELETE_QUESTION_SUCCESS,
   DELETE_QUESTION_FAILURE
-} from '../actionTypes/deleteActionType.js';
+} from '../actionTypes/deleteActionType';
 
 export const deleteQuestionActionRequest = id => ({
   type: DELETE_QUESTION_REQUEST,

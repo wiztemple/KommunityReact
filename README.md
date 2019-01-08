@@ -1,5 +1,5 @@
 # Build Status
-![](https://img.shields.io/apm/l/:packageName.svg)
+[![Build Status](https://travis-ci.org/wiztemple/KommunityReact.svg?branch=develop)](https://travis-ci.org/wiztemple/KommunityReact) [![Test Coverage](https://api.codeclimate.com/v1/badges/ee98794163105933b695/test_coverage)](https://codeclimate.com/github/wiztemple/KommunityReact/test_coverage)
 
 # KommunityReact
 
