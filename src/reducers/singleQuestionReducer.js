@@ -4,6 +4,11 @@ import {
   SINGLE_QUESTION_FAILURE
 } from '../actionTypes/singleQuestionActionType';
 
+import {
+  POST_ANSWER_SUCCESS,
+  POST_ANSWER_FAILURE
+} from '../actionTypes/postAnswerActionType.js';
+
 const initialState = {
   fetching: false,
   question: null,
@@ -32,6 +37,11 @@ const singleQuestionReducer = (state = initialState, action) => {
       fetching: false,
       question: null,
       error: action.payload
+    };
+  case POST_ANSWER_SUCCESS:
+    return {
+      ...state,
+      answers: [action.payload, ...state.answers]
     };
   default:
     return state;

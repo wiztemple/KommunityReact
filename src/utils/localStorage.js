@@ -3,7 +3,10 @@ export const getItem = (item) => {
 };
 
 export const clearStorage = () => {
-  localStorage.clear();
+  localStorage.removeItem('email');
+  localStorage.removeItem('id');
+  localStorage.removeItem('token');
+  localStorage.removeItem('username');
 };
 
 export const getUserCredentials = (userDetails) => {

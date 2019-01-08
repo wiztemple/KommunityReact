@@ -26,11 +26,9 @@ class Card extends Component {
           questions && questions.length > 0 && questions.map(question => (
             <div className="card p-1" key={question.id}>
               <div className="card-question">
-                <a className="card-question__title" href="answer.html">
-                  <Link to={`/questions/${question.id}`}>
-                    {question.title}
-                  </Link>
-                </a>
+                <Link className="card-question__title" to={`/questions/${question.id}`}>
+                  {question.title}
+                </Link>
                 <div className="card-hide">
                   <i className="icon ion-ios-keypad" />
                   <div className="card-drop">
