@@ -11,7 +11,7 @@ module.exports = merge(common, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        API_URL: JSON.stringify('https://haven-ah-backend.herokuapp.com/api/v1')
+        API_URL: JSON.stringify('https://kommunity-app.herokuapp.com/api/v1')
       }
     })
   ]
